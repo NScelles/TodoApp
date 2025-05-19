@@ -10,6 +10,26 @@ import java.util.Map;
 
 public class Todo implements TodoServiceImpl {
 
+    private int id;
+    private String name;
+    private String description;
+    private boolean done;
+
+    private static int compt = 0;
+    private static Map<Integer,Todo> allTodo = new HashMap();
+
+    public Todo() { }
+
+    public Todo(String name, String description) {
+        this(compt++,name,description,false);
+    }
+
+    public Todo(int id, String name, String description, boolean done) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.done = done;
+    }
 
     @Override
     public List<Todo> getAll() {
