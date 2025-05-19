@@ -2,6 +2,7 @@ package org.example.service;
 
 import org.example.model.Todo;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,6 +21,16 @@ public class TodoServiceImpl implements TodoService{
     public List<Todo> getAll() {
         return allTodo.values().stream().toList();
     }
+
+    public List<Todo> getAllNotDone() {
+        List<Todo> allTodoNotdone = new ArrayList<>();
+        for (Todo todo:allTodo.values())
+            if(!todo.isDone())
+                allTodoNotdone.add(todo);
+        return allTodoNotdone;
+    }
+
+
 
     @Override
     public Todo getById(int id) {
@@ -46,6 +57,8 @@ public class TodoServiceImpl implements TodoService{
         TodoServiceImpl todo = allTodo.get(id);
         allTodo.replace(id, new Todo(id, todo.name, todo.description, !todo.done));
     }
+
+
 
     public int getId() {
         return id;
