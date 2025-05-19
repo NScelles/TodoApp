@@ -58,6 +58,17 @@ public class Todo implements TodoServiceImpl {
 
     @Override
     public void toggleDone(int id) {
+        Todo todo = allTodo.get(id);
+        allTodo.replace(id, new Todo(id, todo.name, todo.description, !todo.done));
+    }
 
+    public boolean isExist(int id){
+        return allTodo.containsKey(id);
+    }
+
+    @Override
+    public String toString() {
+        return "["+id+"] " + name + " - " + description +
+                ((done) ? " (fait)" : (" (à faire)"));
     }
 }
