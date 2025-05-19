@@ -7,11 +7,13 @@ public class PriorityTodo extends Todo{
         super(name, description);
         this.priority = priority;
     }
-
+/*
     @Override
     public void add(String name, String description) {
         allTodo.put(compt,new PriorityTodo(name,description,Priority.HAUTE));
     }
+
+ */
 
     @Override
     public String toString() {

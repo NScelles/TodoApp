@@ -7,15 +7,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class TodoServiceImpl implements TodoService{
+public class TodoServiceImpl extends Todo implements TodoService {
 
-    protected int id;
-    protected String name;
-    protected String description;
-    protected boolean done;
 
-    protected static int compt = 0;
-    protected static Map<Integer,Todo> allTodo = new HashMap();
+
 
     @Override
     public List<Todo> getAll() {
@@ -29,8 +24,6 @@ public class TodoServiceImpl implements TodoService{
                 allTodoNotdone.add(todo);
         return allTodoNotdone;
     }
-
-
 
     @Override
     public Todo getById(int id) {
@@ -54,41 +47,10 @@ public class TodoServiceImpl implements TodoService{
 
     @Override
     public void toggleDone(int id) {
-        TodoServiceImpl todo = allTodo.get(id);
-        allTodo.replace(id, new Todo(id, todo.name, todo.description, !todo.done));
+        Todo todo = allTodo.get(id);
+        allTodo.replace(id, new Todo(id, todo.getName(), todo.getDescription(), !todo.isDone()));
     }
 
 
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public boolean isDone() {
-        return done;
-    }
-
-    public void setDone(boolean done) {
-        this.done = done;
-    }
 }
