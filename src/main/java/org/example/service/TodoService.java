@@ -11,5 +11,4 @@ public interface TodoService {
     void update(int id, String name, String description, boolean done);
     void remove(int id);
     void toggleDone(int id);
-
 }
