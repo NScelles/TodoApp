@@ -43,17 +43,17 @@ public class Todo implements TodoServiceImpl {
 
     @Override
     public void add(String name, String description) {
-
+        allTodo.put(compt,new Todo(name,description));
     }
 
     @Override
     public void update(int id, String name, String description, boolean done) {
-
+        allTodo.replace(id,new Todo(id,name,description,done));
     }
 
     @Override
     public void remove(int id) {
-
+        allTodo.remove(id);
     }
 
     @Override
