@@ -20,8 +20,9 @@ L’entreprise **TaskFlow**, spécialisée dans les outils de productivité, dé
   * Créer des tâches 
   * Voir les tâches créer
   * Supprimmer des tâches
+  * Modifier des tâches
   * Compléter des tâches
-  
+
 ---
 
 ## Comment lancer l'application 
