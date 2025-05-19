@@ -33,12 +33,12 @@ public class Todo implements TodoServiceImpl {
 
     @Override
     public List<Todo> getAll() {
-        return List.of();
+        return allTodo.values().stream().toList();
     }
 
     @Override
     public Todo getById(int id) {
-        return null;
+        return allTodo.get(id);
     }
 
     @Override
