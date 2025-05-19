@@ -22,7 +22,8 @@ public class Ihm {
             System.out.println("3. Modifier une tâche");
             System.out.println("4. Supprimer une tâche");
             System.out.println("5. Marquer tâche comme faite / non faite");
-            System.out.println("6. Quitter");
+            System.out.println("6. Créer une tâche prioritaire");
+            System.out.println("7. Quitter");
             System.out.print("Votre choix : ");
             String input = scanner.nextLine();
 
@@ -32,7 +33,7 @@ public class Ihm {
                 case "3" -> updateTodo();
                 case "4" -> deleteTodo();
                 case "5" -> toggleTodo();
-                case "6" -> {
+                case "7" -> {
                     System.out.println("Au revoir !");
                     return;
                 }
@@ -82,5 +83,14 @@ public class Ihm {
         int id = Integer.parseInt(scanner.nextLine());
         service.toggleDone(id);
         System.out.println("État de la tâche inversé !");
+    }
+
+    private void createTodoPrioritaire() {
+        System.out.print("Nom : ");
+        String name = scanner.nextLine();
+        System.out.print("Description : ");
+        String description = scanner.nextLine();
+        service.add(name, description);
+        System.out.println("Tâche ajoutée !");
     }
 }
