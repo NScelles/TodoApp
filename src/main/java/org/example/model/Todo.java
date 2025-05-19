@@ -23,8 +23,6 @@ public class Todo extends TodoServiceImpl {
         this.done = done;
     }
 
-
-
     public boolean isExist(int id){
         return allTodo.containsKey(id);
     }
