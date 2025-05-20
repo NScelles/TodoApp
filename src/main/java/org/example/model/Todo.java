@@ -15,13 +15,10 @@ public class Todo {
     protected String description;
     protected boolean done;
 
-    protected static int compt = 0;
-    protected static Map<Integer,Todo> allTodo = new HashMap();
-
     public Todo() { }
 
     public Todo(String name, String description) {
-        this(compt++,name,description,false);
+        this(TodoServiceImpl.getCompt(),name,description,false);
     }
 
     public Todo(int id, String name, String description, boolean done) {
@@ -29,10 +26,6 @@ public class Todo {
         this.name = name;
         this.description = description;
         this.done = done;
-    }
-
-    public boolean isExist(int id){
-        return allTodo.containsKey(id);
     }
 
     @Override

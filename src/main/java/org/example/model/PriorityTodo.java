@@ -12,12 +12,12 @@ public class PriorityTodo extends Todo{
     public void add(String name, String description) {
         allTodo.put(compt,new PriorityTodo(name,description,Priority.HAUTE));
     }
-
  */
+
 
     @Override
     public String toString() {
-        return "["+id+"] "+"[Prioritaire - "+ priority +"]"+ name + " - " + description +
+        return "["+id+"] "+"[Prioritaire - "+ priority +"] "+ name + " - " + description +
                 ((done) ? " (fait)" : (" (à faire)"));
     }
 }

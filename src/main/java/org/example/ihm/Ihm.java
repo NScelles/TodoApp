@@ -1,5 +1,6 @@
 package org.example.ihm;
 
+import org.example.model.Priority;
 import org.example.model.Todo;
 import org.example.service.TodoService;
 
@@ -33,6 +34,7 @@ public class Ihm {
                 case "3" -> updateTodo();
                 case "4" -> deleteTodo();
                 case "5" -> toggleTodo();
+                case "6" -> createTodoPrioritaire();
                 case "7" -> {
                     System.out.println("Au revoir !");
                     return;
@@ -54,6 +56,13 @@ public class Ihm {
     private void showAll() {
         System.out.println("\nListe des tâches :");
         for (Todo todo : service.getAll()) {
+            System.out.println(todo);
+        }
+    }
+
+    private void showAllNotDone() {
+        System.out.println("\nListe des tâches :");
+        for (Todo todo : service.getAllNotDone()) {
             System.out.println(todo);
         }
     }
@@ -90,7 +99,18 @@ public class Ihm {
         String name = scanner.nextLine();
         System.out.print("Description : ");
         String description = scanner.nextLine();
-        service.add(name, description);
+
+        Priority priority = null;
+        do {
+            System.out.print("Priorité (Haute, Moyenne, Faible): ");
+            switch (scanner.nextLine()){
+                case "Haute" -> priority=Priority.HAUTE;
+                case "Moyenne" -> priority=Priority.MOYENNE;
+                case "Faible" -> priority=Priority.FAIBLE;
+                default -> System.out.println("Priorité inexistante recommencez :");
+            }
+        }while (priority==null);
+        service.addPriorityTodo(name, description,priority);
         System.out.println("Tâche ajoutée !");
     }
 }

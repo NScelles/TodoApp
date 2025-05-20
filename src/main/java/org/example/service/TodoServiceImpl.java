@@ -1,5 +1,7 @@
 package org.example.service;
 
+import org.example.model.Priority;
+import org.example.model.PriorityTodo;
 import org.example.model.Todo;
 
 import java.util.ArrayList;
@@ -7,10 +9,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class TodoServiceImpl extends Todo implements TodoService {
+public class TodoServiceImpl implements TodoService {
 
-
-
+    private static int compt = 0;
+    private static Map<Integer,Todo> allTodo = new HashMap();
 
     @Override
     public List<Todo> getAll() {
@@ -32,7 +34,7 @@ public class TodoServiceImpl extends Todo implements TodoService {
 
     @Override
     public void add(String name, String description) {
-        allTodo.put(compt,new Todo(name,description));
+        allTodo.put(compt++,new Todo(name,description));
     }
 
     @Override
@@ -49,8 +51,26 @@ public class TodoServiceImpl extends Todo implements TodoService {
     public void toggleDone(int id) {
         Todo todo = allTodo.get(id);
         allTodo.replace(id, new Todo(id, todo.getName(), todo.getDescription(), !todo.isDone()));
+        //allTodo.get(id).setDone(!allTodo.get(id).isDone());
     }
 
+    public void addPriorityTodo(String name, String description, Priority priority){
+        allTodo.put(compt++,new PriorityTodo(name,description,priority));
+    }
 
+    public static int getCompt() {
+        return compt;
+    }
 
+    public static void setCompt(int compt) {
+        TodoServiceImpl.compt = compt;
+    }
+
+    public static Map<Integer, Todo> getAllTodo() {
+        return allTodo;
+    }
+
+    public static void setAllTodo(Map<Integer, Todo> allTodo) {
+        TodoServiceImpl.allTodo = allTodo;
+    }
 }
