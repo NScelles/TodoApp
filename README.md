@@ -81,6 +81,26 @@ src/
 #### Exemple de rendu console :
 
 ```
-[3] 🔴 [Prioritaire - HAUTE] Réviser l’oral - relire les fiches (À FAIRE)
-[4] ✅ Acheter du café (FAIT)
+==== TODO LIST ====
+1. Créer une tâche
+2. Voir toutes les tâches
+3. Modifier une tâche
+4. Supprimer une tâche
+5. Marquer tâche comme faite / non faite
+6. Créer une tâche prioritaire
+7. Quitter
+Votre choix : 6
+Nom : PortFolio
+Description : Développer le Body
+Priorité (Haute, Moyenne, Faible): Haute
+Tâche ajoutée !
+```
+
+
+```
+Liste des tâches :
+[2] PortFolio - Développer le Header (à faire)
+[3] Angular - Apprendre Angular (fait)
+[4] PortFolio - Développer le Footer (à faire)
+[5] [Prioritaire - HAUTE] PortFolio - Développer le Body (à faire)
 ```
