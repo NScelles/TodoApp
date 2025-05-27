@@ -2,6 +2,9 @@
 
 ## 🎯 Contexte
 
+Ce projet est une application console de **gestion de tâches**, réalisée dans le cadre d’un TP de **programmation orientée objet (POO)** en Java.  
+
+Le TP:
 L’entreprise **TaskFlow**, spécialisée dans les outils de productivité, développe une application console permettant aux utilisateurs internes de **gérer leurs tâches au quotidien**.
 
 ---
@@ -27,7 +30,16 @@ L’entreprise **TaskFlow**, spécialisée dans les outils de productivité, dé
 
 ## Comment lancer l'application 
 
-### Lacncer simplement le programme et c'est partie !
+### 📦 Compilation
+
+```bash
+javac -d bin src/**/*.java
+````
+### 🚀 Exécution
+
+```bash
+java -cp bin Main
+```
 
 
 ### ✅ 📌 Classe Tâche (Todo)
@@ -41,7 +53,28 @@ Chaque tâche (ou "todo") est représentée par un objet `Todo` et doit obligato
 * `compt` (entier) : compteur qui a pour but de indexer les IDs et les rendres uniques
 * `allTodo` (Map Entier-Todo) : Map de tâche indexer par un entier pour stocker les Tâches
 
-🛠️ Ces champs sont être **encapsulés** dans la classe `Todo`, avec des **getters et setters** publics.
+###🛠️ Ces champs sont être **encapsulés** dans la classe `Todo`, avec des **getters et setters** publics.
+
+---
+
+## 📁 Structure du projet
+
+```
+src/
+│
+├── model/
+│   ├── Todo.java
+│   └── PriorityTodo.java   # (bonus)
+│
+├── service/
+│   ├── TodoService.java
+│   └── TodoServiceImpl.java
+│
+├── ihm/
+│   └── Ihm.java
+│
+└── Main.java
+```
 
 ---
 
@@ -51,9 +84,3 @@ Chaque tâche (ou "todo") est représentée par un objet `Todo` et doit obligato
 [3] 🔴 [Prioritaire - HAUTE] Réviser l’oral - relire les fiches (À FAIRE)
 [4] ✅ Acheter du café (FAIT)
 ```
-
-
-
-
-
-
