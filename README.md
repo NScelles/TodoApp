@@ -53,7 +53,7 @@ Chaque tâche (ou "todo") est représentée par un objet `Todo` et doit obligato
 * `compt` (entier) : compteur qui a pour but de indexer les IDs et les rendres uniques
 * `allTodo` (Map Entier-Todo) : Map de tâche indexer par un entier pour stocker les Tâches
 
-###🛠️ Ces champs sont être **encapsulés** dans la classe `Todo`, avec des **getters et setters** publics.
+🛠️ Ces champs sont être **encapsulés** dans la classe `Todo`, avec des **getters et setters** publics.
 
 ---
 
