@@ -2,7 +2,7 @@
 
 ## 🎯 Contexte
 
-Ce projet est une application console de **gestion de tâches**, réalisée dans le cadre d’un TP de **programmation orientée objet (POO)** en Java.  
+Ce projet est une application console de **gestion de tâches**, réalisée dans le cadre d’un TP donné par m2i formation pour le module de **programmation orientée objet (POO)** en Java.  
 
 Le TP:
 L’entreprise **TaskFlow**, spécialisée dans les outils de productivité, développe une application console permettant aux utilisateurs internes de **gérer leurs tâches au quotidien**.
